@@ -1,7 +1,6 @@
 streamlit 
 pandas 
-plotly.express 
-re
+plotly
 create_client
 Counter
 date
