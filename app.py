@@ -46,12 +46,12 @@ supabase = get_client()
 # ─────────────────────────────────────────────
 # FETCH DATA
 # ─────────────────────────────────────────────
-@st.cache_data(ttl=60)
+@st.cache_data(ttl=5)
 def fetch_sessions():
     response = supabase.table("sessions").select("*").execute()
     return pd.DataFrame(response.data)
 
-@st.cache_data(ttl=60)
+@st.cache_data(ttl=5)
 def fetch_messages():
     response = supabase.table("messages").select("*").execute()
     return pd.DataFrame(response.data)
