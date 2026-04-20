@@ -116,6 +116,11 @@ else:
 st.sidebar.divider()
 st.sidebar.markdown(f"**Showing {len(filtered_df)} of {len(sessions_df)} sessions**")
 
+# ── Manual Refresh Button ────────
+if st.sidebar.button("🔄 Refresh Data"):
+    st.cache_data.clear()
+    st.rerun()
+
 # ─────────────────────────────────────────────
 # HELPER: bar chart with labels
 # ─────────────────────────────────────────────
@@ -298,3 +303,4 @@ else:
     st.info("No bookings match the selected filters.")
 
 st.caption("Data refreshes every 60 seconds. Use the sidebar to filter results.")
+
