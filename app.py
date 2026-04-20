@@ -242,7 +242,7 @@ with col_dropoff:
     if not filtered_df.empty and "dropoff_location" in filtered_df.columns:
         dropoff_counts = filtered_df["dropoff_location"].dropna().value_counts().head(10).reset_index()
         dropoff_counts.columns = ["Location", "Count"]
-        st.plotly_chart(labeled_bar(dropoff_counts, "Count", "Location", color_scale="Reds"), use_container_width=True)
+        st.plotly_chart(labeled_bar(dropoff_counts, "Count", "Location", color_scale="Blues"), use_container_width=True)
     else:
         st.warning("No dropoff location data found.")
 
